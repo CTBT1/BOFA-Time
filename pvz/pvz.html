@@ -1,66 +1,42 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BOFA Time - Plants Vs Zombies</title>
+    <meta charset="utf-8">
+    <title>Plants VS. Zombies Cool UBG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            color: #ffffff;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            background-color: #444;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             overflow: hidden;
         }
-        nav a {
-            float: left;
-            display: block;
-            color: #fff;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-        nav a:hover {
-            background-color: #555;
-        }
-        main {
-            padding: 20px;
-            text-align: center;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
+        #flash-container {
             width: 100%;
-            bottom: 0;
+            height: 100%;
+            max-width: 833px; /* Maximum width of your content */
+            max-height: 833px; /* Maximum height of your content */
+            margin: auto; /* Center the container horizontally */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        object {
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>BOFA Time</h1>
-        <p>Made by Miles Adams</p>
-    </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <!-- Add more links as needed -->
-    </nav>
-    <main>
-        <!-- Embed website directly here using iframe -->
-        <iframe src="https://ciscoha.github.io/unblocked-list/plants-vs.-zombies-web-demo/" width="900" height="600" frameborder="0"></iframe>
-    </main>
-    <footer>
-    </footer>
+    <div id="flash-container">
+        <!-- Embed the SWF content with Ruffle emulator and set the scale to fit the container -->
+        <object data="plants-vs-zombies.swf" type="application/x-shockwave-flash" width="100%" height="100%">
+        </object>
+    </div>
 </body>
 </html>

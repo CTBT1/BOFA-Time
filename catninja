@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOFA Time - Cat Ninja</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+</head>
+<body>
+    <header>
+        <h1>BOFA Time</h1>
+        <p>Made by Miles Adams</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <!-- <a href="slope.html">Slope</a> -->
+        <!-- Add more links as needed -->
+    </nav>
+    <main>
+        <object width="900" height="600">
+            <param name="movie" value="files/gun-mayhem-2_1.swf">
+            <embed src="files/gun-mayhem-2_1.swf" width="900" height="600"></embed>
+        </object>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>

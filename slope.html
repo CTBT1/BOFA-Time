@@ -51,7 +51,81 @@
             width: 100%;
             bottom: 0;
         }
+
+        /* Game container styles */
+        .webgl-content * {border: 0; margin: 0; padding: 0}
+        .webgl-content {top: 0; left: 0;}
+
+        .webgl-content .logo, .progress {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        .webgl-content .logo {
+            background: url('') no-repeat center / contain;
+            width: 154px;
+            height: 130px;
+        }
+        .webgl-content .progress {height: 18px; width: 141px; margin-top: 90px;}
+        .webgl-content .progress .empty {background: url('') no-repeat right / cover; float: right; width: 100%; height: 100%; display: inline-block;}
+        .webgl-content .progress .full {background: url('') no-repeat left / cover; float: left; width: 0%; height: 100%; display: inline-block;}
+
+        #gameContainer canvas {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+        }
+
+        button {
+            min-width: 100%;
+            font-family: inherit;
+            appearance: none;
+            border: 0;
+            border-radius: 5px;
+            background: #2c2c2c;
+            color: #fff;
+            padding: 18px 46px;
+            font-size: 28px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #3f3f3f;
+        }
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px #cbd6ee;
+        } 
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
     </style>
+    <script src="https://www.id.net/api/user_data/autologin?callback=idnet_autologin&amp;app_id=55961e5ee694aa0ae90003e8"></script>
+    <script src="https://cdn.jsdelivr.net/gh/spadezplz/Phantoms-Archive@b936818f6d1900a4bb6418b704a9051630d9a968/Slope/UnityProgress.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/spadezplz/Phantoms-Archive@b936818f6d1900a4bb6418b704a9051630d9a968/Slope/UnityLoader.js"></script>
+    <script type="text/javascript">
+        var gameInstance;
+        window.onload = function () {
+            let bttn = document.createElement("button");
+            bttn.appendChild(document.createTextNode("CLICK TO PLAY NOW"));
+            bttn.setAttribute('id', 'run_game');
+            bttn.style.display = 'none';
+            bttn.style.position = 'absolute';
+            document.body.appendChild(bttn);
+            bttn.style.display = 'block';
+            bttn.style.left = ((document.body.clientWidth - bttn.offsetWidth) / 2) + 'px';
+            bttn.style.top = ((document.body.clientHeight - bttn.offsetHeight) / 2) + 'px';
+            bttn.onclick = function () {
+                gameInstance = UnityLoader.instantiate("gameContainer", "https://cdn.jsdelivr.net/gh/spadezplz/Phantoms-Archive@b936818f6d1900a4bb6418b704a9051630d9a968/Slope/slope_new.json", { onProgress: UnityProgress, Module: { onRuntimeInitialized: function () { UnityProgress(gameInstance, "complete") } } });
+                this.remove();
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -62,13 +136,20 @@
         <a href="index.html">Home</a>
         <a href="devLog.html">Dev Log</a>
         <a href="slope.html">Slope</a>
-        <!-- Add more links as needed -->
     </nav>
     <main>
         <h2>Slope</h2>
         <p>Navigate the 3D course and avoid obstacles in this fast-paced game.</p>
-        <iframe src="https://example.com/slope-game"></iframe>
-        <!-- Replace the src attribute with the actual URL of the Slope game -->
+        <div class="webgl-content">
+            <div id="gameContainer" style="width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; position: relative; background: rgb(0, 0, 0);">
+                <canvas id="#canvas" width="806" height="604" style="cursor: default;"></canvas>
+                <div class="logo Dark" style="display: none;"></div>
+                <div class="progress Dark" style="display: none;">
+                    <div class="empty" style="width: 0%;"></div>
+                    <div class="full" style="width: 100%;"></div>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
     </footer>

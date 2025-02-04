@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0K61YYVEN"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -35,7 +35,7 @@
             padding: 5px;
         }
 
-        nav a {
+        nav a, .dropbtn {
             float: left;
             display: block;
             color: #fff;
@@ -44,7 +44,7 @@
             text-decoration: none;
         }
 
-        nav a:hover {
+        nav a:hover, .dropdown-content a:hover {
             background-color: #555;
         }
 
@@ -56,7 +56,6 @@
         .dropdown .dropbtn {
             background-color: #444;
             color: white;
-            padding: 14px 16px;
             font-size: 16px;
             border: none;
             cursor: pointer;
@@ -79,10 +78,6 @@
             text-align: left;
         }
 
-        .dropdown-content a:hover {
-            background-color: #555;
-        }
-
         .dropdown:hover .dropdown-content {
             display: block;
         }
@@ -96,14 +91,6 @@
             padding: 7px;
             font-size: 16px;
             border: none;
-        }
-
-        .search-bar button {
-            padding: 7px;
-            background-color: #555;
-            color: white;
-            border: none;
-            cursor: pointer;
         }
 
         main {
@@ -121,18 +108,6 @@
         }
     </style>
 
-    <script>
-        // Game Search Filter Functionality
-        function searchGames() {
-            const input = document.getElementById('gameSearch').value.toLowerCase();
-            const links = document.querySelectorAll('nav a');
-
-            links.forEach(link => {
-                const text = link.textContent.toLowerCase();
-                link.style.display = text.includes(input) ? 'block' : 'none';
-            });
-        }
-    </script>
 </head>
 
 <body>
@@ -142,6 +117,8 @@
     </header>
 
     <nav>
+        <a href="index.html">Home</a>
+        <a href="devLog.html">Dev Log</a>
         <div class="dropdown">
             <button class="dropbtn">All Games ▼</button>
             <div class="dropdown-content">
@@ -160,11 +137,8 @@
                 <a href="riddletransfer2.html">Riddle Transfer 2</a>
             </div>
         </div>
-
-        <a href="index.html">Home</a>
-        <a href="devLog.html">Dev Log</a>
         <div class="search-bar">
-            <input type="text" id="gameSearch" oninput="searchGames()" placeholder="Search games...">
+            <input type="text" id="gameSearch" placeholder="Search games...">
         </div>
     </nav>
 

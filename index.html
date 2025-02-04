@@ -85,12 +85,34 @@
         .search-bar {
             float: right;
             padding: 10px;
+            position: relative;
         }
 
         .search-bar input[type="text"] {
             padding: 7px;
             font-size: 16px;
             border: none;
+        }
+
+        .search-results {
+            display: none;
+            position: absolute;
+            background-color: #444;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 10;
+            width: 100%;
+        }
+
+        .search-results a {
+            display: block;
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+        }
+
+        .search-results a:hover {
+            background-color: #555;
         }
 
         main {
@@ -108,6 +130,53 @@
         }
     </style>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('gameSearch');
+            const searchResults = document.getElementById('searchResults');
+            const games = [
+                { name: 'Gun Mayhem 2', url: 'gunmayhem2.html' },
+                { name: 'Plants Vs Zombies', url: 'pvz.html' },
+                { name: 'Cat Ninja', url: 'catninja.html' },
+                { name: 'Diggy', url: 'diggy.html' },
+                { name: 'Impossible Quiz', url: 'impossiblequiz.html' },
+                { name: 'Impossible Quiz 2', url: 'impossiblequiz2.html' },
+                { name: 'Riddle School', url: 'riddleschool1.html' },
+                { name: 'Riddle School 2', url: 'riddleschool2.html' },
+                { name: 'Riddle School 3', url: 'riddleschool3.html' },
+                { name: 'Riddle School 4', url: 'riddleschool4.html' },
+                { name: 'Riddle School 5', url: 'riddleschool5.html' },
+                { name: 'Riddle Transfer', url: 'riddletransfer1.html' },
+                { name: 'Riddle Transfer 2', url: 'riddletransfer2.html' }
+            ];
+
+            searchInput.addEventListener('input', function () {
+                const query = searchInput.value.toLowerCase();
+                searchResults.innerHTML = '';
+
+                if (query) {
+                    const filteredGames = games.filter(game => game.name.toLowerCase().includes(query));
+
+                    filteredGames.forEach(game => {
+                        const link = document.createElement('a');
+                        link.href = game.url;
+                        link.textContent = game.name;
+                        searchResults.appendChild(link);
+                    });
+
+                    searchResults.style.display = filteredGames.length > 0 ? 'block' : 'none';
+                } else {
+                    searchResults.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!searchResults.contains(event.target) && event.target !== searchInput) {
+                    searchResults.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -120,7 +189,7 @@
         <a href="index.html">Home</a>
         <a href="devLog.html">Dev Log</a>
         <div class="dropdown">
-            <button class="dropbtn">All Games ▼</button>
+            <button class="dropbtn">All Games &#9660;</button>
             <div class="dropdown-content">
                 <a href="gunmayhem2.html">Gun Mayhem 2</a>
                 <a href="pvz.html">Plants Vs Zombies</a>
@@ -139,6 +208,7 @@
         </div>
         <div class="search-bar">
             <input type="text" id="gameSearch" placeholder="Search games...">
+            <div id="searchResults" class="search-results"></div>
         </div>
     </nav>
 

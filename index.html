@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0K61YYVEN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0K61YYVEN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-M0K61YYVEN');
+    </script>
 
-  gtag('config', 'G-M0K61YYVEN');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOFA Time</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,16 +21,20 @@
             padding: 0;
             background-color: #f4f4f4;
         }
+
         header {
             background-color: #333;
             color: #fff;
             padding: 10px 0;
             text-align: center;
         }
+
         nav {
             background-color: #444;
             overflow: hidden;
+            padding: 5px;
         }
+
         nav a {
             float: left;
             display: block;
@@ -38,12 +43,73 @@
             padding: 14px 16px;
             text-decoration: none;
         }
+
         nav a:hover {
             background-color: #555;
         }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            background-color: #444;
+            color: white;
+            padding: 14px 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #444;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .search-bar {
+            float: right;
+            padding: 10px;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 7px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .search-bar button {
+            padding: 7px;
+            background-color: #555;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
         main {
             padding: 20px;
         }
+
         footer {
             background-color: #333;
             color: #fff;
@@ -54,34 +120,54 @@
             bottom: 0;
         }
     </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3262859807968582"
-     crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-3262859807968582">
+
+    <script>
+        // Game Search Filter Functionality
+        function searchGames() {
+            const input = document.getElementById('gameSearch').value.toLowerCase();
+            const links = document.querySelectorAll('nav a');
+
+            links.forEach(link => {
+                const text = link.textContent.toLowerCase();
+                link.style.display = text.includes(input) ? 'block' : 'none';
+            });
+        }
+    </script>
 </head>
+
 <body>
     <header>
         <h1>BOFA Time</h1>
         <p>Made by Miles Adams</p>
     </header>
+
     <nav>
+        <div class="dropdown">
+            <button class="dropbtn">All Games ▼</button>
+            <div class="dropdown-content">
+                <a href="gunmayhem2.html">Gun Mayhem 2</a>
+                <a href="pvz.html">Plants Vs Zombies</a>
+                <a href="catninja.html">Cat Ninja</a>
+                <a href="diggy.html">Diggy</a>
+                <a href="impossiblequiz.html">Impossible Quiz</a>
+                <a href="impossiblequiz2.html">Impossible Quiz 2</a>
+                <a href="riddleschool1.html">Riddle School</a>
+                <a href="riddleschool2.html">Riddle School 2</a>
+                <a href="riddleschool3.html">Riddle School 3</a>
+                <a href="riddleschool4.html">Riddle School 4</a>
+                <a href="riddleschool5.html">Riddle School 5</a>
+                <a href="riddletransfer1.html">Riddle Transfer</a>
+                <a href="riddletransfer2.html">Riddle Transfer 2</a>
+            </div>
+        </div>
+
         <a href="index.html">Home</a>
         <a href="devLog.html">Dev Log</a>
-        <a href="gunmayhem2.html">Gun Mayhem 2</a>
-        <a href="pvz.html">Plants Vs Zombies</a>
-        <a href="catninja.html">Cat Ninja</a>
-        <a href="diggy.html">Diggy</a>
-        <a href="impossiblequiz.html">Impossible Quiz</a>
-        <a href="impossiblequiz2.html">Impossible Quiz 2</a>
-        <a href="riddleschool1.html">Riddle School</a>
-        <a href="riddleschool2.html">Riddle School 2</a>
-        <a href="riddleschool3.html">Riddle School 3</a>
-        <a href="riddleschool4.html">Riddle School 4</a>
-        <a href="riddleschool5.html">Riddle School 5</a>
-        <a href="riddletransfer1.html">Riddle Transfer</a>
-        <a href="riddletransfer2.html">Riddle Transfer 2</a>
-        <!-- <a href="slope.html">Slope</a> -->
-        <!-- Add more links as needed -->
+        <div class="search-bar">
+            <input type="text" id="gameSearch" oninput="searchGames()" placeholder="Search games...">
+        </div>
     </nav>
+
     <main>
         <h2>The Greatest Site Since BOFA Time 2.0</h2>
         <p>Last Updated: 2/2/2025</p>
@@ -90,7 +176,7 @@
             <li>BOFA Time 3.0 is official, games being added as we speak</li>
         </ul>
     </main>
-    <footer>
-    </footer>
+
+    <footer></footer>
 </body>
 </html>

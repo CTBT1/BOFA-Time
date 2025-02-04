@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0K61YYVEN"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -35,7 +35,7 @@
             padding: 5px;
         }
 
-        nav a, .dropbtn {
+        nav a {
             float: left;
             display: block;
             color: #fff;
@@ -44,7 +44,7 @@
             text-decoration: none;
         }
 
-        nav a:hover, .dropdown-content a:hover {
+        nav a:hover {
             background-color: #555;
         }
 
@@ -56,6 +56,7 @@
         .dropdown .dropbtn {
             background-color: #444;
             color: white;
+            padding: 14px 16px;
             font-size: 16px;
             border: none;
             cursor: pointer;
@@ -78,6 +79,10 @@
             text-align: left;
         }
 
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+
         .dropdown:hover .dropdown-content {
             display: block;
         }
@@ -94,20 +99,30 @@
             border: none;
         }
 
+        .search-bar button {
+            padding: 7px;
+            background-color: #555;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
         .search-results {
-            display: none;
             position: absolute;
+            top: 100%;
+            left: 0;
             background-color: #444;
+            width: 100%;
             max-height: 200px;
             overflow-y: auto;
+            border: 1px solid #555;
             z-index: 10;
-            width: 100%;
         }
 
         .search-results a {
             display: block;
+            padding: 10px;
             color: white;
-            padding: 12px 16px;
             text-decoration: none;
         }
 
@@ -131,50 +146,52 @@
     </style>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const searchInput = document.getElementById('gameSearch');
-            const searchResults = document.getElementById('searchResults');
-            const games = [
-                { name: 'Gun Mayhem 2', url: 'gunmayhem2.html' },
-                { name: 'Plants Vs Zombies', url: 'pvz.html' },
-                { name: 'Cat Ninja', url: 'catninja.html' },
-                { name: 'Diggy', url: 'diggy.html' },
-                { name: 'Impossible Quiz', url: 'impossiblequiz.html' },
-                { name: 'Impossible Quiz 2', url: 'impossiblequiz2.html' },
-                { name: 'Riddle School', url: 'riddleschool1.html' },
-                { name: 'Riddle School 2', url: 'riddleschool2.html' },
-                { name: 'Riddle School 3', url: 'riddleschool3.html' },
-                { name: 'Riddle School 4', url: 'riddleschool4.html' },
-                { name: 'Riddle School 5', url: 'riddleschool5.html' },
-                { name: 'Riddle Transfer', url: 'riddletransfer1.html' },
-                { name: 'Riddle Transfer 2', url: 'riddletransfer2.html' }
+        // Game Search Filter Functionality
+        function searchGames() {
+            const input = document.getElementById('gameSearch').value.toLowerCase();
+            const resultsContainer = document.getElementById('searchResults');
+            const links = [
+                { name: "Gun Mayhem 2", url: "gunmayhem2.html" },
+                { name: "Plants Vs Zombies", url: "pvz.html" },
+                { name: "Cat Ninja", url: "catninja.html" },
+                { name: "Diggy", url: "diggy.html" },
+                { name: "Impossible Quiz", url: "impossiblequiz.html" },
+                { name: "Impossible Quiz 2", url: "impossiblequiz2.html" },
+                { name: "Riddle School", url: "riddleschool1.html" },
+                { name: "Riddle School 2", url: "riddleschool2.html" },
+                { name: "Riddle School 3", url: "riddleschool3.html" },
+                { name: "Riddle School 4", url: "riddleschool4.html" },
+                { name: "Riddle School 5", url: "riddleschool5.html" },
+                { name: "Riddle Transfer", url: "riddletransfer1.html" },
+                { name: "Riddle Transfer 2", url: "riddletransfer2.html" }
             ];
 
-            searchInput.addEventListener('input', function () {
-                const query = searchInput.value.toLowerCase();
-                searchResults.innerHTML = '';
+            resultsContainer.innerHTML = '';
 
-                if (query) {
-                    const filteredGames = games.filter(game => game.name.toLowerCase().includes(query));
+            if (input) {
+                const filteredLinks = links.filter(link => link.name.toLowerCase().includes(input));
 
-                    filteredGames.forEach(game => {
-                        const link = document.createElement('a');
-                        link.href = game.url;
-                        link.textContent = game.name;
-                        searchResults.appendChild(link);
-                    });
+                filteredLinks.forEach(link => {
+                    const resultItem = document.createElement('a');
+                    resultItem.href = link.url;
+                    resultItem.textContent = link.name;
+                    resultsContainer.appendChild(resultItem);
+                });
 
-                    searchResults.style.display = filteredGames.length > 0 ? 'block' : 'none';
-                } else {
-                    searchResults.style.display = 'none';
-                }
-            });
+                resultsContainer.style.display = 'block';
+            } else {
+                resultsContainer.style.display = 'none';
+            }
+        }
 
-            document.addEventListener('click', function (event) {
-                if (!searchResults.contains(event.target) && event.target !== searchInput) {
-                    searchResults.style.display = 'none';
-                }
-            });
+        // Hide dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+            const searchBar = document.querySelector('.search-bar');
+            const resultsContainer = document.getElementById('searchResults');
+
+            if (!searchBar.contains(event.target)) {
+                resultsContainer.style.display = 'none';
+            }
         });
     </script>
 </head>
@@ -186,10 +203,8 @@
     </header>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="devLog.html">Dev Log</a>
         <div class="dropdown">
-            <button class="dropbtn">All Games &#9660;</button>
+            <button class="dropbtn">All Games ▼</button>
             <div class="dropdown-content">
                 <a href="gunmayhem2.html">Gun Mayhem 2</a>
                 <a href="pvz.html">Plants Vs Zombies</a>
@@ -206,8 +221,12 @@
                 <a href="riddletransfer2.html">Riddle Transfer 2</a>
             </div>
         </div>
+
+        <a href="index.html">Home</a>
+        <a href="devLog.html">Dev Log</a>
+
         <div class="search-bar">
-            <input type="text" id="gameSearch" placeholder="Search games...">
+            <input type="text" id="gameSearch" oninput="searchGames()" placeholder="Search games...">
             <div id="searchResults" class="search-results"></div>
         </div>
     </nav>

@@ -48,10 +48,48 @@
             background-color: #555;
         }
 
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            background-color: #444;
+            color: white;
+            padding: 14px 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #444;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
         .search-bar {
             float: right;
             padding: 10px;
-            position: relative;
         }
 
         .search-bar input[type="text"] {
@@ -66,29 +104,6 @@
             color: white;
             border: none;
             cursor: pointer;
-        }
-
-        .search-results {
-            background-color: #fff;
-            position: absolute;
-            width: 100%;
-            max-height: 200px;
-            overflow-y: auto;
-            border: 1px solid #ddd;
-            z-index: 1;
-            display: none;
-        }
-
-        .search-results a {
-            display: block;
-            padding: 8px;
-            color: #333;
-            text-decoration: none;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .search-results a:hover {
-            background-color: #f0f0f0;
         }
 
         main {
@@ -107,47 +122,15 @@
     </style>
 
     <script>
-        const games = [
-            { name: "Gun Mayhem 2", link: "gunmayhem2.html" },
-            { name: "Plants Vs Zombies", link: "pvz.html" },
-            { name: "Cat Ninja", link: "catninja.html" },
-            { name: "Diggy", link: "diggy.html" },
-            { name: "Impossible Quiz", link: "impossiblequiz.html" },
-            { name: "Impossible Quiz 2", link: "impossiblequiz2.html" },
-            { name: "Riddle School", link: "riddleschool1.html" },
-            { name: "Riddle School 2", link: "riddleschool2.html" },
-            { name: "Riddle School 3", link: "riddleschool3.html" },
-            { name: "Riddle School 4", link: "riddleschool4.html" },
-            { name: "Riddle School 5", link: "riddleschool5.html" },
-            { name: "Riddle Transfer", link: "riddletransfer1.html" },
-            { name: "Riddle Transfer 2", link: "riddletransfer2.html" }
-        ];
-
+        // Game Search Filter Functionality
         function searchGames() {
             const input = document.getElementById('gameSearch').value.toLowerCase();
-            const resultsContainer = document.getElementById('searchResults');
-            resultsContainer.innerHTML = ''; // Clear previous results
+            const links = document.querySelectorAll('nav a');
 
-            if (input === '') {
-                resultsContainer.style.display = 'none';
-                return;
-            }
-
-            const filteredGames = games.filter(game =>
-                game.name.toLowerCase().includes(input)
-            );
-
-            if (filteredGames.length > 0) {
-                resultsContainer.style.display = 'block';
-                filteredGames.forEach(game => {
-                    const link = document.createElement('a');
-                    link.href = game.link;
-                    link.textContent = game.name;
-                    resultsContainer.appendChild(link);
-                });
-            } else {
-                resultsContainer.style.display = 'none';
-            }
+            links.forEach(link => {
+                const text = link.textContent.toLowerCase();
+                link.style.display = text.includes(input) ? 'block' : 'none';
+            });
         }
     </script>
 </head>
@@ -159,11 +142,29 @@
     </header>
 
     <nav>
+        <div class="dropdown">
+            <button class="dropbtn">All Games ▼</button>
+            <div class="dropdown-content">
+                <a href="gunmayhem2.html">Gun Mayhem 2</a>
+                <a href="pvz.html">Plants Vs Zombies</a>
+                <a href="catninja.html">Cat Ninja</a>
+                <a href="diggy.html">Diggy</a>
+                <a href="impossiblequiz.html">Impossible Quiz</a>
+                <a href="impossiblequiz2.html">Impossible Quiz 2</a>
+                <a href="riddleschool1.html">Riddle School</a>
+                <a href="riddleschool2.html">Riddle School 2</a>
+                <a href="riddleschool3.html">Riddle School 3</a>
+                <a href="riddleschool4.html">Riddle School 4</a>
+                <a href="riddleschool5.html">Riddle School 5</a>
+                <a href="riddletransfer1.html">Riddle Transfer</a>
+                <a href="riddletransfer2.html">Riddle Transfer 2</a>
+            </div>
+        </div>
+
         <a href="index.html">Home</a>
         <a href="devLog.html">Dev Log</a>
         <div class="search-bar">
             <input type="text" id="gameSearch" oninput="searchGames()" placeholder="Search games...">
-            <div id="searchResults" class="search-results"></div>
         </div>
     </nav>
 

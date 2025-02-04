@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0K61YYVEN"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -33,7 +33,6 @@
             background-color: #444;
             overflow: hidden;
             padding: 5px;
-            position: relative;
         }
 
         nav a {
@@ -51,6 +50,7 @@
 
         .search-bar {
             float: right;
+            padding: 10px;
             position: relative;
         }
 
@@ -58,20 +58,24 @@
             padding: 7px;
             font-size: 16px;
             border: none;
-            width: 200px;
+        }
+
+        .search-bar button {
+            padding: 7px;
+            background-color: #555;
+            color: white;
+            border: none;
+            cursor: pointer;
         }
 
         .search-results {
             background-color: #fff;
             position: absolute;
-            top: 100%; /* Fully below the search bar */
-            left: 0;
             width: 100%;
             max-height: 200px;
             overflow-y: auto;
             border: 1px solid #ddd;
-            z-index: 1000;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1;
             display: none;
         }
 

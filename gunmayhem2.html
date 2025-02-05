@@ -9,9 +9,11 @@
         gtag('js', new Date());
         gtag('config', 'G-M0K61YYVEN');
     </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOFA Time</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -53,12 +55,48 @@
             width: 100%;
             bottom: 0;
         }
+        .dropdown {
+            float: right;
+            overflow: hidden;
+            position: relative;
+            margin-right: 40px;
+        }
+        .dropdown .dropbtn {
+            background-color: #444;
+            color: white;
+            padding: 14px 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #444;
+            min-width: 160px;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3262859807968582"
-     crossorigin="anonymous"></script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3262859807968582" crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-3262859807968582">
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 </head>
+
 <body>
     <header>
         <h1>BOFA Time</h1>
@@ -67,15 +105,16 @@
 
     <nav>
         <a href="index.html">Home</a>
-        <!-- <a href="slope.html">Slope</a> -->
-        <!-- Add more links as needed -->
-
-        <!-- Dropdown injected here -->
         <div id="dropdown-container"></div>
         <script>
             fetch("dropdown.html")
-              .then(response => response.text())
-              .then(data => document.getElementById("dropdown-container").innerHTML = data);
+                .then(response => response.text())
+                .then(data => {
+                    const dropdownWrapper = document.createElement("div");
+                    dropdownWrapper.innerHTML = data;
+                    dropdownWrapper.classList.add("dropdown");
+                    document.getElementById("dropdown-container").appendChild(dropdownWrapper);
+                });
         </script>
     </nav>
 

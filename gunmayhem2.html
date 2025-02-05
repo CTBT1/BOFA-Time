@@ -106,16 +106,7 @@
     <nav>
         <a href="index.html">Home</a>
         <div id="dropdown-container"></div>
-        <script>
-            fetch("dropdown.html")
-                .then(response => response.text())
-                .then(data => {
-                    const dropdownWrapper = document.createElement("div");
-                    dropdownWrapper.innerHTML = data;
-                    dropdownWrapper.classList.add("dropdown");
-                    document.getElementById("dropdown-container").appendChild(dropdownWrapper);
-                });
-        </script>
+        
     </nav>
 
     <main>

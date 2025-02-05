@@ -74,7 +74,7 @@
             position: absolute;
             background-color: #444;
             min-width: 160px;
-            z-index: 1;
+            z-index: 9999; /* Ensure it appears above other elements */
         }
         .dropdown-content a {
             float: none;
@@ -108,18 +108,13 @@
         <div id="dropdown-container"></div>
         <script>
             fetch("dropdown.html")
-    .then(response => {
-        if (!response.ok) throw new Error("Failed to load dropdown");
-        return response.text();
-    })
-    .then(data => {
-        const dropdownWrapper = document.createElement("div");
-        dropdownWrapper.innerHTML = data;
-        dropdownWrapper.classList.add("dropdown");
-        document.getElementById("dropdown-container").appendChild(dropdownWrapper);
-    })
-    .catch(error => console.error("Error loading dropdown:", error));
-
+                .then(response => response.text())
+                .then(data => {
+                    const dropdownWrapper = document.createElement("div");
+                    dropdownWrapper.innerHTML = data;
+                    dropdownWrapper.classList.add("dropdown");
+                    document.getElementById("dropdown-container").appendChild(dropdownWrapper);
+                });
         </script>
     </nav>
 

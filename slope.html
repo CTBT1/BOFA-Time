@@ -1,55 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A captivating web-based game to test your skills">
-    <title>Game Page</title>
-
-    <!-- Analytics Script -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'UA-XXXXXXXXX-X');
-    </script>
-
-    <!-- Game-Specific Styles -->
-    <link rel="stylesheet" href="styles/game-styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-</head>
-
-<body>
-
-    <!-- Header Section (Integrated from the regular site template) -->
-    <header>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="/home">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/games">Games</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Game Container -->
-    <main id="game-container">
-        <h1>Welcome to the Ultimate Challenge!</h1>
-        <canvas id="gameCanvas"></canvas>
-    </main>
-
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2025 Game Company. All rights reserved.</p>
-    </footer>
-
-    <!-- Game-Specific Scripts -->
-    <script src="scripts/game-engine.js"></script>
-    <script src="scripts/game-logic.js"></script>
-
-</body>
-
-</html>
+<html><head><base target="_blank"><style>
+    .webgl-content * {border: 0; margin: 0; padding: 0}
+    .webgl-content {top: 0; left: 0;}
+    
+    .webgl-content .logo, .progress {position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
+    .webgl-content .logo {background: url('') no-repeat center / contain; width: 154px; height: 130px;}
+    .webgl-content .progress {height: 18px; width: 141px; margin-top: 90px;}
+    .webgl-content .progress .empty {background: url('') no-repeat right / cover; float: right; width: 100%; height: 100%; display: inline-block;}
+    .webgl-content .progress .full {background: url('') no-repeat left / cover; float: left; width: 0%; height: 100%; display: inline-block;}
+    
+    .webgl-content .logo.Dark {background-image: url('data:image/png;base64,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');}
+    .webgl-content .progress.Dark .empty {background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI0AAAASCAYAAABmbl0zAAAACXBIWXMAAAsSAAALEgHS3X78AAAATUlEQVRo3u3aIQ4AIAwEQUr4/5cPiyMVBDOj0M2mCKgkGdAwjYCudZzLOLiITYPrCdEgGkSDaEA0iAbRIBpEA6JBNHx1vnL7V4NNwxsbCNMGI3YImu0AAAAASUVORK5CYII=');}
+    .webgl-content .progress.Dark .full {background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI0AAAASCAYAAABmbl0zAAAACXBIWXMAAAsSAAALEgHS3X78AAAAO0lEQVRo3u3SQREAAAjDMMC/56EB3omEXjtJCg5GAkyDaTANpsE0YBpMg2kwDaYB02AaTINpMA2Yhr8FO18EIBpZMeQAAAAASUVORK5CYII=');}
+    
+    body, html{
+        margin:0;
+        padding:0;
+    }
+    
+    #gameContainer canvas{
+        position:absolute;
+        transform:translate(-50%, -50%);
+        top:50%;
+        left:50%;
+    
+    }
+    
+    .simmer{
+        position:absolute;
+        bottom:10px;
+        right:10px;
+        color:#aaa;
+        font-size:9px;
+        font-family:sans-serif;
+        font-family:sans-serif;
+    
+        /*want to remove the simmer branding? uncomment display:none below!*/
+        /*display:none;*/
+    }
+    
+    .simmer a{
+        color:#cccccc;
+        text-decoration:none;
+        font-size:12px;
+        transition:opacity 3s;
+    
+    }
+    
+    .simmer a:hover{
+        color:#fff;
+        text-decoration:underline;
+    }
+    
+    .simmer.hide {
+        opacity:0;
+    }
+    </style>
+        <script src="https://www.id.net/api/user_data/autologin?callback=idnet_autologin&amp;app_id=55961e5ee694aa0ae90003e8"></script><script src="https://cdn.jsdelivr.net/gh/spadezplz/Phantoms-Archive@b936818f6d1900a4bb6418b704a9051630d9a968/Slope/UnityProgress.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/spadezplz/Phantoms-Archive@b936818f6d1900a4bb6418b704a9051630d9a968/Slope/UnityLoader.js"></script>
+    
+        <script type="text/javascript">
+          var gameInstance;
+          window.onload = function () {
+            let  bttn = document.createElement( "button" );
+            bttn.appendChild(document.createTextNode( "CLICK TO PLAY NOW" ));
+            bttn.setAttribute('id', 'run_game');
+            bttn.style.display = 'none';
+            bttn.style.position = 'absolute';
+            document.body.appendChild(bttn);
+            bttn.style.display = 'block';
+            bttn.style.left = ((document.body.clientWidth - bttn.offsetWidth)/2) + 'px';
+            bttn.style.top = ((document.body.clientHeight - bttn.offsetHeight)/2) + 'px';
+            bttn.onclick = function () {
+              gameInstance = UnityLoader.instantiate("gameContainer", "https://cdn.jsdelivr.net/gh/spadezplz/Phantoms-Archive@b936818f6d1900a4bb6418b704a9051630d9a968/Slope/slope_new.json", {onProgress: UnityProgress,Module:{onRuntimeInitialized: function() {UnityProgress(gameInstance, "complete")}}});
+              this.remove();
+            }
+          }
+        </script>
+        </head><body><div class="webgl-content">
+          <div id="gameContainer" style="width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; position: relative; background: rgb(0, 0, 0);"><canvas id="#canvas" width="806" height="604" style="cursor: default;"></canvas><div class="logo Dark" style="display: none;"></div><div class="progress Dark" style="display: none;"><div class="empty" style="width: 0%;"></div><div class="full" style="width: 100%;"></div></div></div>
+        </div>
+    <style>
+    button {
+      min-width: 100%;
+      font-family: inherit;
+      appearance: none;
+      border: 0;
+      border-radius: 5px;
+      background: #2c2c2c;
+      color: #fff;
+      padding: 18px 46px;
+      font-size: 28px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #3f3f3f;
+    }
+    button:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px #cbd6ee;
+    } 
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    </style><script src="blob:https://2088230792-atari-embeds.googleusercontent.com/4226b6ba-3073-45bb-bfa3-02c7672bf6f1"></script></body></html>

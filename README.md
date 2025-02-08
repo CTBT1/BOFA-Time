@@ -1,4 +1,3 @@
 BOFA Time 3.0 is official.
 Unblocked games for the masses.
-MC Server in the works.
-Perhaps.
+BOFA Time sponsored Minecraft Server is in the works.

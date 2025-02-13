@@ -1,8 +1,9 @@
-Play Retro Bowl unblocked during class!
-Following install instructions.
-1. Click on the latest release (subject to change due to me trying to make it so GoGuardian can't see it)
-2. Download the .zip file.
-3. Run the retrobowl.html file
-4. It should take you to the html document with Retro Bowl! 
-5. If this doesn't work, I will be setting up a Google Forum on what happens when you try to follow these instructions
-DISCLAIMER: I AM NOT RESPONSIBLE FOR ANY SORT OF TROUBLE YOU GET IN USING THIS, USE AT YOUR OWN RISK.
+# Retro Bowl
+Retro Bowl is an American style football game created by New Star Games. Are you ready to manage your dream team into victory? Be the boss of your NFL franchise, expand your roster, take care of your press duties to keep your team and fans happy.
+
+![logo](https://3kh0.github.io/retro-bowl/img/icon.jpg)
+
+## Play 
+
+Click the link below to play!<br>
+[https://3kh0.github.io/retro-bowl/](https://3kh0.github.io/retro-bowl/)

@@ -24,13 +24,14 @@
         }
 
         header {
-            position: relative;
+            position: relative;  /* Added for secret button */
             background-color: #333;
             color: #fff;
             padding: 10px 0;
             text-align: center;
         }
 
+        /* Secret button styles */
         .secret-button {
             position: absolute;
             top: 0;
@@ -50,19 +51,13 @@
             background-color: #444;
             overflow: hidden;
             padding: 5px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-section {
-            display: flex;
-            align-items: center;
-            gap: 20px;
         }
 
         nav a {
+            float: left;
+            display: block;
             color: #fff;
+            text-align: center;
             padding: 14px 16px;
             text-decoration: none;
         }
@@ -72,7 +67,9 @@
         }
 
         .dropdown {
-            position: relative;
+            float: right;
+            overflow: hidden;
+            margin-right: 40px;
         }
 
         .dropdown .dropbtn {
@@ -90,32 +87,10 @@
             background-color: #444;
             min-width: 160px;
             z-index: 1;
-            max-height: 70vh;
-            overflow-y: auto;
-        }
-
-        .search-container {
-            display: flex;
-            gap: 5px;
-        }
-
-        #searchInput {
-            padding: 8px;
-            border: none;
-            border-radius: 4px;
-            min-width: 200px;
-        }
-
-        .search-container button {
-            padding: 8px 12px;
-            background-color: #555;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
         }
 
         .dropdown-content a {
+            float: none;
             color: white;
             padding: 12px 16px;
             text-decoration: none;
@@ -127,8 +102,8 @@
             background-color: #555;
         }
 
-        .show {
-            display: block !important;
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         main {
@@ -153,149 +128,141 @@
 
 <body>
     <header>
+        <!-- Secret button added here -->
         <a href="supersecret.html" class="secret-button"></a>
         <h1>BOFA Time 3.0</h1>
         <p>Made by Miles Adams</p>
     </header>
 
     <nav>
-        <div class="nav-section">
-            <a href="index.html">Home</a>
-            <a href="devLog.html">Dev Log</a>
-        </div>
-        
-        <div class="nav-section">
-            <div class="dropdown">
-                <button class="dropbtn" onclick="toggleDropdown()">All Games &#9660;</button>
-                <div class="dropdown-content" id="gamesDropdown">
-                    <!-- Full original game list preserved -->
-                    <a href="2048.html">2048</a>
-                    <a href="billiards.html">8 Ball Pool</a>
-                    <a href="bitlife.html">BitLife</a>
-                    <a href="ageofwar2.html">Age Of War 2</a>
-                    <a href="awesomeplanes.html">Awesome Planes</a>
-                    <a href="awesometanks1.html">Awesome Tanks</a>
-                    <a href="awesometanks2.html">Awesome Tanks 2</a>
-                    <a href="basketrandom.html">Basket Random</a>
-                    <a href="bartender.html">Bartender The Right Mix</a>
-                    <a href="blackjack.html">Black Jack</a>
-                    <a href="bloonstd4.html">Bloons TD 4</a>
-                    <a href="bloonstd5.html">Bloons TD 5</a>
-                    <a href="blockblastfix.html">Block Blast</a>
-                    <a href="bubbletanks2.html">Bubble Tanks 2</a>
-                    <a href="burritobison.html">Burrito Bison</a>
-                    <a href="burritobisonrevenge.html">Burrito Bison Revenge</a>
-                    <a href="burritobison3.html">Burrito Bison Launcha Libre</a>
-                    <a href="catninja.html">Cat Ninja</a>
-                    <a href="cookieclicker.html">Cookie Clicker</a>
-                    <a href="creativekill.html">Creative Kill Chamber</a>
-                    <a href="diggy.html">Diggy</a>
-                    <a href="dragracer.html">Drag Racer</a>
-                    <a href="driftboss.html">Drift Boss</a>
-                    <a href="drivemad.html">Drive Mad</a>
-                    <a href="ducklife1.html">Duck Life</a>
-                    <a href="ducklife2.html">Duck Life 2</a>
-                    <a href="ducklife3.html">Duck Life 3</a>
-                    <a href="ducklife4.html">Duck Life 4</a>
-                    <a href="ducklife5.html">Duck Life Treasure Hunt</a>
-                    <a href="effingworms.html">Effing Worms</a>
-                    <a href="electricman2.html">Electric Man 2</a>
-                    <a href="fancypants.html">Fancy Pants</a>
-                    <a href="fancypants2.html">Fancy Pants 2</a>
-                    <a href="fancypants3.html">Fancy Pants 3</a>
-                    <a href="fancypants4-1.html">Fancy Pants 4: part 1</a>
-                    <a href="fancypants4-2.html">Fancy Pants 4: part 2</a>
-                    <a href="factoryballs1.html">Factory Balls</a>
-                    <a href="factoryballs2.html">Factory Balls 2</a>
-                    <a href="factoryballs3.html">Factory Balls 3</a>
-                    <a href="factoryballs4.html">Factory Balls 4</a>
-                    <a href="flashbowling.html">Flash Bowling</a>
-                    <a href="fltron.html">Tron</a>
-                    <a href="gunmayhem2.html">Gun Mayhem 2</a>
-                    <a href="happywheels.html">Happy Wheels</a>
-                    <a href="henrystick1.html">Henry Stickmin: Breaking the Bank</a>
-                    <a href="henrystick2.html">Henry Stickmin: Escaping the Prison</a>
-                    <a href="henrystick3.html">Henry Stickmin: Stealing the Diamond</a>
-                    <a href="henrystick4.html">Henry Stickmin: Infiltrating the Airship</a>
-                    <a href="henrystick5.html">Henry Stickmin: Fleeing the Complex</a>
-                    <a href="idlebreakout.html">Idle Breakout</a>
-                    <a href="idledice.html">Idle Dice</a>
-                    <a href="impossiblequiz.html">Impossible Quiz</a>
-                    <a href="impossiblequiz2.html">Impossible Quiz 2</a>
-                    <a href="interactivebuddy.html">Interactive Buddy</a>
-                    <a href="learntofly2.html">Learn To Fly 2</a>
-                    <a href="learntofly3.html">Learn To Fly 3</a>
-                    <a href="meatboy.html">Meat Boy</a>
-                    <a href="motox3m1.html">Moto X3M</a>
-                    <a href="motox3m2.html">Moto X3M 2</a>
-                    <a href="motox3mwinter.html">Moto X3M Winter</a>
-                    <a href="motox3mpool.html">Moto X3M Pool Party</a>
-                    <a href="motox3mspooky.html">Moto X3M Spooky Land</a>
-                    <a href="murder.html">Murder</a>
-                    <a href="mutantcup.html">Mutant Fighting Cup</a>
-                    <a href="papalouie1.html">Papa Louie 1</a>
-                    <a href="papalouie2.html">Papa Louie 2</a>
-                    <a href="papalouie3.html">Papa Louie 3</a>
-                    <a href="papasburger.html">Papa's Burgeria</a>
-                    <a href="papascupcake.html">Papa's Cupcakeria</a>
-                    <a href="papasdonut.html">Papa's Donuteria</a>
-                    <a href="papasfreezer.html">Papa's Freezeria</a>
-                    <a href="papashotdog.html">Papa's Hotdoggeria</a>
-                    <a href="papaspancake.html">Papa's Pancakeria</a>
-                    <a href="papaspizza.html">Papa's Pizzeria</a>
-                    <a href="papastaco.html">Papa's Tacomia</a>
-                    <a href="papaswing.html">Papa's Wingeria</a>
-                    <a href="papassushi.html">Papa's Sushiria</a>
-                    <a href="pandemic2.html">Pandemic 2</a>
-                    <a href="portalflash.html">Portal: The Flash Version</a>
-                    <a href="portal2d.html">Portal 2D</a>
-                    <a href="pvz.html">Plants Vs Zombies</a>
-                    <a href="qwop.html">QWOP</a>
-                    <a href="raftwars1.html">Raft Wars</a>
-                    <a href="raftwars2.html">Raft Wars 2</a>
-                    <a href="retrobowl.html">Retro Bowl</a>
-                    <a href="riddleschool1.html">Riddle School</a>
-                    <a href="riddleschool2.html">Riddle School 2</a>
-                    <a href="riddleschool3.html">Riddle School 3</a>
-                    <a href="riddleschool4.html">Riddle School 4</a>
-                    <a href="riddleschool5.html">Riddle School 5</a>
-                    <a href="riddletransfer1.html">Riddle Transfer</a>
-                    <a href="riddletransfer2.html">Riddle Transfer 2</a>
-                    <a href="rooftop1.html">Rooftop Snipers</a>
-                    <a href="rooftop2.html">Rooftop Snipers 2</a>
-                    <a href="run3.html">Run 3</a>
-                    <a href="slopefix.html">Slope</a>
-                    <a href="spankthemonkey.html">Spank The Monkey</a>
-                    <a href="stickmanhook.html">Stickman Hook</a>
-                    <a href="stickrpg.html">Stick RPG</a>
-                    <a href="stickwar.html">Stick War</a>
-                    <a href="stickwar2.html">Stick War 2</a>
-                    <a href="sniper.html">Sniper Assassin 3</a>
-                    <a href="sugarsugar.html">Sugar Sugar</a>
-                    <a href="sugarsugar2.html">Sugar Sugar 2</a>
-                    <a href="suika.html">Watermelon Game</a>
-                    <a href="supersmash.html">Super Smash Flash</a>
-                    <a href="swordsandsandals1.html">Swords and Sandals</a>
-                    <a href="swordsandsandals2.html">Swords and Sandals 2</a>
-                    <a href="tanks.html">Tanks</a>
-                    <a href="tetris.html">Tetris</a>
-                    <a href="tetrix.html">Tetrix 2</a>
-                    <a href="thegame.html">The Game</a>
-                    <a href="thisistheonlylevel.html">This is the Only Level</a>
-                    <a href="whackyourboss.html">Whack Your Boss</a>
-                    <a href="wheely1.html">Wheely</a>
-                    <a href="wheely2.html">Wheely 2</a>
-                    <a href="wheely3.html">Wheely 3</a>
-                    <a href="whg1.html">Worlds Hardest Game</a>
-                    <a href="whg2.html">Worlds Hardest Game 2</a>
-                    <a href="whg3.html">Worlds Hardest Game 3</a>
-                    <a href="whg4.html">Worlds Hardest Game 4</a>
-                    <a href="zombocalypse.html">Zombocalypse</a>
-                </div>
-            </div>
-            <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Search games..." oninput="filterGames()">
-                <button onclick="filterGames()">Search</button>
+        <a href="index.html">Home</a>
+        <a href="devLog.html">Dev Log</a>
+        <div class="dropdown">
+            <button class="dropbtn">All Games &#9660;</button>
+            <div class="dropdown-content">
+                <!-- Full game list preserved -->
+                <a href="2048.html">2048</a>
+                <a href="billiards.html">8 Ball Pool</a>
+                <a href="bitlife.html">BitLife</a>
+                <a href="ageofwar2.html">Age Of War 2</a>
+                <a href="awesomeplanes.html">Awesome Planes</a>
+                <a href="awesometanks1.html">Awesome Tanks</a>
+                <a href="awesometanks2.html">Awesome Tanks 2</a>
+                <a href="basketrandom.html">Basket Random</a>
+                <a href="bartender.html">Bartender The Right Mix</a>
+                <a href="blackjack.html">Black Jack</a>
+                <a href="bloonstd4.html">Bloons TD 4</a>
+                <a href="bloonstd5.html">Bloons TD 5</a>
+                <a href="blockblastfix.html">Block Blast</a>
+                <a href="bubbletanks2.html">Bubble Tanks 2</a>
+                <a href="burritobison.html">Burrito Bison</a>
+                <a href="burritobisonrevenge.html">Burrito Bison Revenge</a>
+                <a href="burritobison3.html">Burrito Bison Launcha Libre</a>
+                <a href="catninja.html">Cat Ninja</a>
+                <a href="cookieclicker.html">Cookie Clicker</a>
+                <a href="creativekill.html">Creative Kill Chamber</a>
+                <a href="diggy.html">Diggy</a>
+                <a href="dragracer.html">Drag Racer</a>
+                <a href="driftboss.html">Drift Boss</a>
+                <a href="drivemad.html">Drive Mad</a>
+                <a href="ducklife1.html">Duck Life</a>
+                <a href="ducklife2.html">Duck Life 2</a>
+                <a href="ducklife3.html">Duck Life 3</a>
+                <a href="ducklife4.html">Duck Life 4</a>
+                <a href="ducklife5.html">Duck Life Treasure Hunt</a>
+                <a href="effingworms.html">Effing Worms</a>
+                <a href="electricman2.html">Electric Man 2</a>
+                <a href="fancypants.html">Fancy Pants</a>
+                <a href="fancypants2.html">Fancy Pants 2</a>
+                <a href="fancypants3.html">Fancy Pants 3</a>
+                <a href="fancypants4-1.html">Fancy Pants 4: part 1</a>
+                <a href="fancypants4-2.html">Fancy Pants 4: part 2</a>
+                <a href="factoryballs1.html">Factory Balls</a>
+                <a href="factoryballs2.html">Factory Balls 2</a>
+                <a href="factoryballs3.html">Factory Balls 3</a>
+                <a href="factoryballs4.html">Factory Balls 4</a>
+                <a href="flashbowling.html">Flash Bowling</a>
+                <a href="fltron.html">Tron</a>
+                <a href="gunmayhem2.html">Gun Mayhem 2</a>
+                <a href="happywheels.html">Happy Wheels</a>
+                <a href="henrystick1.html">Henry Stickmin: Breaking the Bank</a>
+                <a href="henrystick2.html">Henry Stickmin: Escaping the Prison</a>
+                <a href="henrystick3.html">Henry Stickmin: Stealing the Diamond</a>
+                <a href="henrystick4.html">Henry Stickmin: Infiltrating the Airship</a>
+                <a href="henrystick5.html">Henry Stickmin: Fleeing the Complex</a>
+                <a href="idlebreakout.html">Idle Breakout</a>
+                <a href="idledice.html">Idle Dice</a>
+                <a href="impossiblequiz.html">Impossible Quiz</a>
+                <a href="impossiblequiz2.html">Impossible Quiz 2</a>
+                <a href="interactivebuddy.html">Interactive Buddy</a>
+                <a href="learntofly2.html">Learn To Fly 2</a>
+                <a href="learntofly3.html">Learn To Fly 3</a>
+                <a href="meatboy.html">Meat Boy</a>
+                <a href="motox3m1.html">Moto X3M</a>
+                <a href="motox3m2.html">Moto X3M 2</a>
+                <a href="motox3mwinter.html">Moto X3M Winter</a>
+                <a href="motox3mpool.html">Moto X3M Pool Party</a>
+                <a href="motox3mspooky.html">Moto X3M Spooky Land</a>
+                <a href="murder.html">Murder</a>
+                <a href="mutantcup.html">Mutant Fighting Cup</a>
+                <a href="papalouie1.html">Papa Louie 1</a>
+                <a href="papalouie2.html">Papa Louie 2</a>
+                <a href="papalouie3.html">Papa Louie 3</a>
+                <a href="papasburger.html">Papa's Burgeria</a>
+                <a href="papascupcake.html">Papa's Cupcakeria</a>
+                <a href="papasdonut.html">Papa's Donuteria</a>
+                <a href="papasfreezer.html">Papa's Freezeria</a>
+                <a href="papashotdog.html">Papa's Hotdoggeria</a>
+                <a href="papaspancake.html">Papa's Pancakeria</a>
+                <a href="papaspizza.html">Papa's Pizzeria</a>
+                <a href="papastaco.html">Papa's Tacomia</a>
+                <a href="papaswing.html">Papa's Wingeria</a>
+                <a href="papassushi.html">Papa's Sushiria</a>
+                <a href="pandemic2.html">Pandemic 2</a>
+                <a href="portalflash.html">Portal: The Flash Version</a>
+                <a href="portal2d.html">Portal 2D</a>
+                <a href="pvz.html">Plants Vs Zombies</a>
+                <a href="qwop.html">QWOP</a>
+                <a href="raftwars1.html">Raft Wars</a>
+                <a href="raftwars2.html">Raft Wars 2</a>
+                <a href="retrobowl.html">Retro Bowl</a>
+                <a href="riddleschool1.html">Riddle School</a>
+                <a href="riddleschool2.html">Riddle School 2</a>
+                <a href="riddleschool3.html">Riddle School 3</a>
+                <a href="riddleschool4.html">Riddle School 4</a>
+                <a href="riddleschool5.html">Riddle School 5</a>
+                <a href="riddletransfer1.html">Riddle Transfer</a>
+                <a href="riddletransfer2.html">Riddle Transfer 2</a>
+                <a href="rooftop1.html">Rooftop Snipers</a>
+                <a href="rooftop2.html">Rooftop Snipers 2</a>
+                <a href="run3.html">Run 3</a>
+                <a href="slopefix.html">Slope</a>
+                <a href="spankthemonkey.html">Spank The Monkey</a>
+                <a href="stickmanhook.html">Stickman Hook</a>
+                <a href="stickrpg.html">Stick RPG</a>
+                <a href="stickwar.html">Stick War</a>
+                <a href="stickwar2.html">Stick War 2</a>
+                <a href="sniper.html">Sniper Assassin 3</a>
+                <a href="sugarsugar.html">Sugar Sugar</a>
+                <a href="sugarsugar2.html">Sugar Sugar 2</a>
+                <a href="suika.html">Watermelon Game</a>
+                <a href="supersmash.html">Super Smash Flash</a>
+                <a href="swordsandsandals1.html">Swords and Sandals</a>
+                <a href="swordsandsandals2.html">Swords and Sandals 2</a>
+                <a href="tanks.html">Tanks</a>
+                <a href="tetris.html">Tetris</a>
+                <a href="tetrix.html">Tetrix 2</a>
+                <a href="thegame.html">The Game</a>
+                <a href="thisistheonlylevel.html">This is the Only Level</a>
+                <a href="whackyourboss.html">Whack Your Boss</a>
+                <a href="wheely1.html">Wheely</a>
+                <a href="wheely2.html">Wheely 2</a>
+                <a href="wheely3.html">Wheely 3</a>
+                <a href="whg1.html">Worlds Hardest Game</a>
+                <a href="whg2.html">Worlds Hardest Game 2</a>
+                <a href="whg3.html">Worlds Hardest Game 3</a>
+                <a href="whg4.html">Worlds Hardest Game 4</a>
+                <a href="zombocalypse.html">Zombocalypse</a>
             </div>
         </div>
     </nav>
@@ -316,45 +283,5 @@
             <iframe src="https://www3.cbox.ws/box/?boxid=3543350&boxtag=zsmkOL" width="100%" height="500" frameborder="0" allowtransparency="yes" scrolling="auto"></iframe>
         </div>
     </main>
-
-    <footer>
-        <!-- Your footer content here -->
-    </footer>
-
-    <script>
-        function toggleDropdown() {
-            const dropdown = document.getElementById('gamesDropdown');
-            dropdown.classList.toggle('show');
-        }
-
-        function filterGames() {
-            const input = document.getElementById('searchInput');
-            const filter = input.value.toLowerCase();
-            const dropdown = document.getElementById('gamesDropdown');
-            const games = dropdown.getElementsByTagName('a');
-
-            for (let game of games) {
-                const gameName = game.textContent || game.innerText;
-                game.style.display = gameName.toLowerCase().includes(filter) 
-                    ? 'block' 
-                    : 'none';
-            }
-            
-            if (!dropdown.classList.contains('show')) {
-                dropdown.classList.add('show');
-            }
-        }
-
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn') && !event.target.matches('#searchInput')) {
-                const dropdowns = document.getElementsByClassName('dropdown-content');
-                for (let dropdown of dropdowns) {
-                    if (dropdown.classList.contains('show')) {
-                        dropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
 </body>
 </html>

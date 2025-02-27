@@ -1,5 +1,3 @@
-BOFA Time 3.0 is official.
-Unblocked games for the masses.
-BOFA Time sponsored Minecraft Server is in the works.
-I LOVE BOFA!
-
+New and upcoming gaming website being updated semi-daily
+If you wish to help in the development shoot me an email
+If you think this site is pretty cool, please consider starring the project and joining the discord for more news and info

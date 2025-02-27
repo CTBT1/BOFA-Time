@@ -43,21 +43,17 @@
         }
         .leaderboards-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 400px)); /* Fixed max width */
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             padding: 2rem;
             max-width: 1200px;
             margin: 0 auto;
-            justify-content: center; /* Added for better alignment */
         }
         .game-leaderboard {
             background: white;
             border-radius: 10px;
             padding: 1.5rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 400px; /* Added max-width constraint */
-            margin: 0 auto; /* Center cards in their grid cells */
         }
         .game-title {
             color: #333;
@@ -178,7 +174,7 @@
                 </li>
             </ul>
         </div>
-    </div>
+
 
             <!-- Game 3 Leaderboard -->
             <div class="game-leaderboard">
@@ -263,5 +259,6 @@
                         </li>
                     </ul>
                 </div>
+    </div>
 </body>
 </html>

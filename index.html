@@ -156,6 +156,22 @@
         .cbox-embed {
             margin-top: 20px;
         }
+        .social-links {
+        display: flex;
+            justify-content: flex-end;
+        gap: 15px;
+        margin-bottom: 20px;
+        }
+
+        .social-links img {
+            width: 40px;
+            height: 40px;
+            transition: opacity 0.2s ease;
+        }
+
+        .social-links img:hover {
+         opacity: 0.8;
+        }
     </style>
 </head>
 
@@ -318,7 +334,14 @@
             <li>If you have any issues with any games contact me through the chat room</li>
             <li>Ads have been removed, info in dev log</li>
         </ul>
-
+        <div class="social-links">
+            <a href="https://github.com/CTBT1/BOFA-Time" target="_blank">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0WxsHiJ67Myud_p_XIdNI35NDec7psLLa5Q&s" alt="GitHub">
+            </a>
+            <a href="https://discord.gg/Jw2ce4GVbJ" target="_blank">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSvQSo64weeAlpUwYBIBKt76KoHjdxDSpEGg&s" alt="Discord">
+            </a>
+        </div>
         <!-- Embedded Cbox Chat Widget -->
         <div class="cbox-embed">
             <iframe src="https://www3.cbox.ws/box/?boxid=3543350&boxtag=zsmkOL" width="100%" height="500" frameborder="0" allowtransparency="yes" scrolling="auto"></iframe>

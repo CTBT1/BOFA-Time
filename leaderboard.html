@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0K61YYVEN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M0K61YYVEN');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOFA Time 3.0 - Leaderboards</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .leaderboards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .game-leaderboard {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .game-title {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        .score-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .score-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+        .rank {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+        .rank-1 { background-color: #ffd700; }
+        .rank-2 { background-color: #c0c0c0; }
+        .rank-3 { background-color: #cd7f32; }
+        .username {
+            font-weight: bold;
+            color: #333;
+        }
+        .score {
+            color: #666;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            margin-top: 2rem;
+        }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3262859807968582"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>BOFA Time 3.0 Leaderboards</h1>
+        <p>Made by Miles Adams</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <!-- Add more navigation links as needed -->
+    </nav>
+    
+    <div class="leaderboards-container">
+        <!-- Game 1 Leaderboard -->
+        <div class="game-leaderboard">
+            <h2 class="game-title">Age of War 2</h2>
+            <ul class="score-list">
+                <li class="score-item">
+                    <div style="display: flex; align-items: center;">
+                        <span class="rank rank-1">1</span>
+                        <span class="username">ProPlayer123</span>
+                    </div>
+                    <span class="score">245,600</span>
+                </li>
+                <li class="score-item">
+                    <div style="display: flex; align-items: center;">
+                        <span class="rank rank-2">2</span>
+                        <span class="username">StrategyMaster</span>
+                    </div>
+                    <span class="score">198,750</span>
+                </li>
+                <li class="score-item">
+                    <div style="display: flex; align-items: center;">
+                        <span class="rank rank-3">3</span>
+                        <span class="username">Warrior99</span>
+                    </div>
+                    <span class="score">156,300</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Game 2 Leaderboard -->
+        <div class="game-leaderboard">
+            <h2 class="game-title">Slope Champions</h2>
+            <ul class="score-list">
+                <li class="score-item">
+                    <div style="display: flex; align-items: center;">
+                        <span class="rank rank-1">1</span>
+                        <span class="username">SpeedDemon</span>
+                    </div>
+                    <span class="score">98,450</span>
+                </li>
+                <li class="score-item">
+                    <div style="display: flex; align-items: center;">
+                        <span class="rank rank-2">2</span>
+                        <span class="username">SlopeKing</span>
+                    </div>
+                    <span class="score">87,920</span>
+                </li>
+                <li class="score-item">
+                    <div style="display: flex; align-items: center;">
+                        <span class="rank rank-3">3</span>
+                        <span class="username">GravityMaster</span>
+                    </div>
+                    <span class="score">76,550</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 BOFA Time 3.0. All rights reserved.</p>
+    </footer>
+</body>
+</html>
